@@ -7,7 +7,8 @@ public class Enemy : MonoBehaviour
 {
     private enum States {
         Idle,
-        Attack
+        Chase,
+        Fire
     }
 
     private States currentState = States.Idle;
@@ -57,13 +58,14 @@ public class Enemy : MonoBehaviour
     {
         armsHolder.gameObject.SetActive(true);
         idleArms.gameObject.SetActive(false);
-        currentState = States.Attack;
+        body.transform.rotation = new Quaternion();
+        currentState = States.Chase;
         Debug.Log("Battle Started on: " + gameObject.name);
     }
 
     private void Update()
     {
-        if (currentState == States.Attack)
+        if (currentState == States.Chase)
         {
             distance = Vector2.Distance(transform.position, GameManager.Instance.Player.position);
             direction = (GameManager.Instance.Player.position - transform.position).normalized;
@@ -78,7 +80,7 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     private void FixedUpdate()
     {
-        if (currentState == States.Attack)
+        if (currentState == States.Chase)
         {
             armsHolder.eulerAngles = new Vector3(0, 0, angle);
             if (distance > firingDistance)

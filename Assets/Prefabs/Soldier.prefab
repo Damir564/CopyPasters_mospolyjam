@@ -30,7 +30,7 @@ Transform:
   m_Children:
   - {fileID: 5861125932443816708}
   m_Father: {fileID: 5861125932089897573}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5861125932089897570
 GameObject:
@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 5861125932089897573}
   - component: {fileID: 5861125932089897572}
   - component: {fileID: 1675092031}
+  - component: {fileID: 1675092034}
   m_Layer: 8
   m_Name: Soldier
   m_TagString: Enemy
@@ -63,7 +64,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5861125932353511789}
-  - {fileID: 5861125932375770184}
   - {fileID: 5861125932082693515}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -109,6 +109,18 @@ MonoBehaviour:
   idleArms: {fileID: 5861125932375770184}
   weaponHolder: {fileID: 5861125932487238781}
   body: {fileID: 5861125932353511789}
+--- !u!114 &1675092034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5861125932089897570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da6fd5cbc3ef57641983192686276316, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5861125932353511786
 GameObject:
   m_ObjectHideFlags: 0
@@ -139,7 +151,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 5861125932375770184}
   m_Father: {fileID: 5861125932089897573}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -257,12 +270,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5861125932375770185}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.03, y: -0.25, z: 0}
+  m_LocalPosition: {x: -0.029999971, y: -0.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5861125932089897573}
-  m_RootOrder: 1
+  m_Father: {fileID: 5861125932353511789}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5861125932375770187
 SpriteRenderer:
