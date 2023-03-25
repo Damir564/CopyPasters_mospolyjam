@@ -25,11 +25,14 @@ public class Shooting : MonoBehaviour
     {
         this.WeaponChange(1);
     }
+    
 
     private void Update()
     {
         if (Input.GetButton("Fire1"))
             Shoot();
+        if (Input.GetButton("Reload"))
+            OnReloading();
     }
 
     private void OnReloading()
@@ -55,8 +58,8 @@ public class Shooting : MonoBehaviour
 
     private void OnAmmoAmountChanged()
     {
-        string temp = m_currentAmmo + "/" + m_currentAllAmmo;
-        // GameManager.Instance.PlayerEvents.RaiseAmmoChangedEvent(temp);
+        string temp = m_currentAmmo + "|" + m_currentAllAmmo;
+        GameManager.Instance.PlayerEvents.RaiseAmmoChangedEvent(temp);
     }
 
     // private void OnScoping()
@@ -122,6 +125,6 @@ public class Shooting : MonoBehaviour
             m_currentAllAmmo = 0;
         }
         m_isNotReloading = true;
-        // OnAmmoAmountChanged();
+        OnAmmoAmountChanged();
     }
 }

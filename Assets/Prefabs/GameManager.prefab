@@ -47,3 +47,5 @@ MonoBehaviour:
   m_weaponSOs:
   - {fileID: 11400000, guid: ba4af179f211e6e47a65f0d8b9494e17, type: 2}
   - {fileID: 11400000, guid: 616615cbb84dc0c4699266e12a38c6a9, type: 2}
+  m_player: {fileID: 0}
+  m_playerEvents: {fileID: 11400000, guid: 18abff63d360b384f9d77ac3975dc927, type: 2}
