@@ -6,6 +6,7 @@ public class Movement : MonoBehaviour
 {
     
     [SerializeField] private float moveSpeed;
+    [SerializeField] private Animator animator;
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform arms;
@@ -45,7 +46,13 @@ public class Movement : MonoBehaviour
 
     private void Move()
     {
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        if (movement.magnitude > 0)
+        {
+            animator.SetBool("isRun", true);
+            rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        }
+        else
+            animator.SetBool("isRun", false);
     }
 
     private void Aim()
@@ -58,7 +65,7 @@ public class Movement : MonoBehaviour
     private void Flip()
     {
         isFacingRight = !isFacingRight;
-        rb.transform.Rotate(0f, 180f, 0f);
-        weaponHolder.Rotate(0f, 180f, 0f);
+        body.transform.Rotate(0f, 180f, 0f);
+        weaponHolder.Rotate(180f, 0f, 0f);
     }
 }

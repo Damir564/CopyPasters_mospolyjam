@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60c58777d9af0ad4e83bd6f684b554e4, type: 3}
+  m_Name: Rifle
+  m_EditorClassIdentifier: 
+  m_bulletPrefab: {fileID: 5253728436703688314, guid: 494ce62f82808a345b06c7e016bc41ca, type: 3}
+  m_headPrefab: {fileID: 2309687946990218561, guid: c0835477a00f6244d9b0322d210e2173, type: 3}
+  m_bulletForce: 40
+  m_bulletDestroyTime: 7
+  m_weaponSoundShoot: {fileID: 0}
+  m_weaponFireRate: 0.05
+  m_weaponReloadTime: 4
+  m_weaponAllTotalAmmo: 400
+  m_weaponTotalAmmo: 500
+  m_weaponScope: 
+  m_weaponScopeMultiplier: []
+  m_weaponImage: {r: 0, g: 0, b: 0, a: 0}

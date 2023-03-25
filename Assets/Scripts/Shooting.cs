@@ -6,12 +6,14 @@ public class Shooting : MonoBehaviour
 {
     // WeaponHolder
     [SerializeField] private Transform weaponHolder;
-    [SerializeField] private GameObject m_head;
+    // [SerializeField] 
+    private GameObject m_head;
 
     [SerializeField] private Transform m_allBulletsParent;
     private Transform m_bulletExit;
     private AudioSource m_audioSource;
-    [SerializeField] private WeaponSO m_weaponValues;
+    //[SerializeField] 
+    private WeaponSO m_weaponValues;
     private bool m_isNotReloading = true;
     // private int m_scopingState = 0;
     private int m_currentWeaponIndex;
@@ -21,12 +23,12 @@ public class Shooting : MonoBehaviour
 
     private void Start()
     {
-        this.WeaponChange(0);
+        this.WeaponChange(1);
     }
 
     private void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButton("Fire1"))
             Shoot();
     }
 
@@ -80,7 +82,7 @@ public class Shooting : MonoBehaviour
         GameObject bullet = Instantiate(m_weaponValues.BulletPrefab, m_bulletExit.position, m_bulletExit.rotation, m_allBulletsParent);
         bullet.name = "Player";
         Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
-        bulletRb.AddForce(m_bulletExit.up * m_weaponValues.BulletForce, ForceMode2D.Impulse);
+        bulletRb.AddForce(m_bulletExit.right * m_weaponValues.BulletForce, ForceMode2D.Impulse);
         //Раскомментить для звука
         //m_audioSource.PlayOneShot(m_weaponValues.WeaponSoundShoot);
         // Эффект ещё должен быть
