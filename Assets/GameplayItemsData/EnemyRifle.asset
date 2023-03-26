@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 60c58777d9af0ad4e83bd6f684b554e4, type: 3}
-  m_Name: Rifle
+  m_Name: EnemyRifle
   m_EditorClassIdentifier: 
-  m_bulletPrefab: {fileID: 8602537775676111124, guid: 494ce62f82808a345b06c7e016bc41ca, type: 3}
+  m_bulletPrefab: {fileID: 8602537775676111124, guid: b480f1d2b7ed6dd4b90f420bbfd7fbba, type: 3}
   m_headPrefab: {fileID: 2309687946990218561, guid: c0835477a00f6244d9b0322d210e2173, type: 3}
   m_bulletForce: 20
   m_bulletDestroyTime: 7
   m_weaponSoundShoot: {fileID: 0}
-  m_weaponFireRate: 0.08
+  m_weaponFireRate: 0.3
   m_weaponReloadTime: 2
-  m_weaponAllTotalAmmo: 200
+  m_weaponAllTotalAmmo: 99999
   m_weaponTotalAmmo: 30
   m_weaponScope: 
   m_weaponScopeMultiplier: []

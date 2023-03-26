@@ -31,8 +31,11 @@ public class Shooting : MonoBehaviour
     {
         if (Input.GetButton("Fire1"))
             Shoot();
-        if (Input.GetButton("Reload"))
+        if (Input.GetButtonDown("Reload"))
             OnReloading();
+        if (Input.GetButtonDown("TimeSnap"))
+            GameManager.Instance.PlayerEvents.RaiseTimeSnapEvent();
+            // GameManager.Instance.GetComponent<SlowMotion>().TimeSnap();
     }
 
     private void OnReloading()

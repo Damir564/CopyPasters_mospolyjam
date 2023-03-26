@@ -10,7 +10,7 @@ public class TriggerPlayer : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.tag.Equals("Player"))
+        if (collider.tag.Equals("Player") || collider.tag.Equals("Bullet"))
         {
             OnPlayerEnterTrigger?.Invoke(groupNumber);
             Debug.Log("Trigger on: " + groupNumber);

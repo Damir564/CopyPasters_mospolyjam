@@ -8,19 +8,24 @@ public class Enemy : MonoBehaviour
     private enum States {
         Idle,
         Chase,
-        Fire
+        Run
     }
 
     private States currentState = States.Idle;
 
     [SerializeField] private Animator animator;
     [SerializeField] private int groupNumber = 0;
-    [SerializeField] private float firingDistance = 20f;
-    [SerializeField] private float speed = 5f;
+    [SerializeField] private float distanceFrom = 20f;
+    [SerializeField] private float speed = 4f;
     [SerializeField] private Transform armsHolder;
     [SerializeField] private Transform idleArms;
     [SerializeField] private Transform weaponHolder;
     [SerializeField] private Transform body;
+    
+    [SerializeField] private Transform posToGo;
+    [SerializeField] private bool isFiringWhileMove = false;
+
+    private EnemyShooting enemyShooting;
     private bool isFacingRight = true;
     private float distance = 0f;
     private float angle = 0f;
@@ -30,12 +35,13 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         armsHolder.gameObject.SetActive(false);
+        enemyShooting = transform.GetComponent<EnemyShooting>();
 
         List<GameObject> triggers = GameManager.Instance.Triggers;
         foreach (GameObject el in triggers)
         {
             el.GetComponent<TriggerPlayer>().OnPlayerEnterTrigger += PlayerTrigger_OnPlayerEnterTrigger;
-            Debug.Log("Subscribed");
+            // Debug.Log("Subscribed");
         }
     }
 
@@ -51,7 +57,28 @@ public class Enemy : MonoBehaviour
     private void PlayerTrigger_OnPlayerEnterTrigger(int number)
     {
         if (groupNumber == number && currentState == States.Idle)
-            StartBattle();
+        {
+            if (posToGo == null)
+            {
+                // posToGo = GameManager.Instance.Player;
+                StartBattle();
+            }
+            else
+            {
+                StartRun();
+            }
+        }
+    }
+
+    private void StartRun()
+    {
+        if (isFiringWhileMove)
+        {
+            armsHolder.gameObject.SetActive(true);
+            idleArms.gameObject.SetActive(false);
+            body.transform.rotation = new Quaternion();
+        }
+        currentState = States.Run;
     }
 
     private void StartBattle()
@@ -60,7 +87,7 @@ public class Enemy : MonoBehaviour
         idleArms.gameObject.SetActive(false);
         body.transform.rotation = new Quaternion();
         currentState = States.Chase;
-        Debug.Log("Battle Started on: " + gameObject.name);
+        // Debug.Log("Battle Started on: " + gameObject.name);
     }
 
     private void Update()
@@ -75,6 +102,19 @@ public class Enemy : MonoBehaviour
             else if ((direction.x) > 0f && !isFacingRight)
                 Flip();
         }
+        else if (currentState == States.Run)
+        {
+            distance = Vector2.Distance(transform.position, posToGo.position);
+            if (isFiringWhileMove)
+                direction = (GameManager.Instance.Player.position - transform.position).normalized;
+            else
+                direction = (posToGo.position - transform.position).normalized;
+            angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            if ((direction.x) < 0f && isFacingRight)
+                Flip();
+            else if ((direction.x) > 0f && !isFacingRight)
+                Flip();
+        }
     }
 
     // Update is called once per frame
@@ -83,18 +123,65 @@ public class Enemy : MonoBehaviour
         if (currentState == States.Chase)
         {
             armsHolder.eulerAngles = new Vector3(0, 0, angle);
-            if (distance > firingDistance)
+            if (!isFiringWhileMove)
             {
-                transform.position = Vector2.MoveTowards(this.transform.position, GameManager.Instance.Player.position, speed * Time.deltaTime);
-                animator.SetBool("isRun", true);
+                if (distance > distanceFrom)
+                {
+                    transform.position = Vector2.MoveTowards(transform.position, GameManager.Instance.Player.position, speed * Time.deltaTime);
+                    animator.SetBool("isRun", true);
+                }
+                else
+                {
+                    animator.SetBool("isRun", false);
+                    enemyShooting.Shoot();
+                }
             }
             else
             {
-                animator.SetBool("isRun", false);
+                if (distance > distanceFrom)
+                {
+                    transform.position = Vector2.MoveTowards(transform.position, GameManager.Instance.Player.position, speed * Time.deltaTime);
+                    animator.SetBool("isRun", true);
+                }
+                else
+                {
+                    animator.SetBool("isRun", false);
+                }
+                enemyShooting.Shoot();
+            }
+        }
+        else if (currentState == States.Run)
+        {
+            if (isFiringWhileMove)
+            {
+                armsHolder.eulerAngles = new Vector3(0, 0, angle);
+                enemyShooting.Shoot();
+                if (distance > distanceFrom)
+                {
+                    transform.position = Vector2.MoveTowards(transform.position, posToGo.position, speed * Time.deltaTime);
+                    animator.SetBool("isRun", true);
+                }
+                else
+                {
+                    animator.SetBool("isRun", false);
+                }
+            }
+            else 
+            {
+                if (distance > distanceFrom)
+                {
+                    transform.position = Vector2.MoveTowards(transform.position, posToGo.position, speed * Time.deltaTime);
+                    animator.SetBool("isRun", true);
+                }
+                else
+                {
+                    animator.SetBool("isRun", false);
+                    isFiringWhileMove = true;
+                    StartRun();
+                }
             }
         }
     }
-
     private void Flip()
     {
         isFacingRight = !isFacingRight;

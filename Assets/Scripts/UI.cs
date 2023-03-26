@@ -15,24 +15,25 @@ public class UI : MonoBehaviour
 
     private void Start()
     {
-        // GameManager.Instance.HealthChangedEvent += OnHealthChanged;
         GameManager.Instance.PlayerEvents.AmmoChangedEvent += OnAmmoChanged;
+        GameManager.Instance.PlayerEvents.HealthChangedEvent += OnHealthChanged;
         // GameManager.Instance.PlayerEvents.ScopeChangedEvent += OnScopeChanged;
         // GameManager.Instance.WeaponImageAndCameraFollowChangeEvent += WeaponImageAndCameraFollowChange;
     }
 
     private void OnDisable()
     {
-        // GameManager.Instance.HealthChangedEvent -= OnHealthChanged;
         GameManager.Instance.PlayerEvents.AmmoChangedEvent -= OnAmmoChanged;
+        GameManager.Instance.PlayerEvents.HealthChangedEvent -= OnHealthChanged;
         // GameManager.Instance.PlayerEvents.ScopeChangedEvent -= OnScopeChanged;
         // GameManager.Instance.WeaponImageAndCameraFollowChangeEvent -= WeaponImageAndCameraFollowChange;
     }
 
 
-    public void OnHealthChanged(int value)
+    public void OnHealthChanged(string value)
     {
-        m_healthCounter.text = value.ToString();
+        m_healthCounter.text = value;
+        
     }
     private void OnAmmoChanged(string value)
     {

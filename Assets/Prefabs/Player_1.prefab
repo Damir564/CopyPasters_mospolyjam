@@ -157,7 +157,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 6e974d167063acb488590fdacc5c2a74, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -275,7 +275,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 4
   m_Sprite: {fileID: -139224289, guid: 131ea636c76f0c34a9df60045811eadd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -336,6 +336,7 @@ GameObject:
   - component: {fileID: 7575052050849339924}
   - component: {fileID: 7575052050849339927}
   - component: {fileID: 7575052050849339926}
+  - component: {fileID: 1588388869}
   m_Layer: 6
   m_Name: Player_1
   m_TagString: Player
@@ -372,7 +373,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 99999
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -414,6 +415,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponHolder: {fileID: 7575052050452384781}
   m_allBulletsParent: {fileID: 0}
+--- !u!114 &1588388869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7575052050849339922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a41c6d93f4e19d84bafa933a1a3d807a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 3
 --- !u!1 &7575052050856865272
 GameObject:
   m_ObjectHideFlags: 0
