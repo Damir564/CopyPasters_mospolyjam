@@ -5,14 +5,15 @@ using UnityEngine.Events;
 
 public class TriggerPlayer : MonoBehaviour
 {
-   public event UnityAction<int> OnPlayerEnterTrigger;
-   [SerializeField] private int groupNumber = 0;
+    public event UnityAction<int> OnPlayerEnterTrigger;
+    [SerializeField] private int groupNumber = 0;
 
-   private void OnTriggerEnter2D(Collider2D collider)
-   {
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
         if (collider.tag.Equals("Player"))
         {
             OnPlayerEnterTrigger?.Invoke(groupNumber);
+            Debug.Log("Trigger on: " + groupNumber);
         }
-   }
+    }
 }
