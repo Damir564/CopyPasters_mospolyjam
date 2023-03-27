@@ -138,7 +138,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 894a33a5cd6b65b44a9a76d7b5c84be5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1
+  maxHealth: 3
+  flashedSprites:
+  - {fileID: 5861125932353511791}
+  - {fileID: 5861125932375770187}
+  - {fileID: 5861125932443816711}
+  - {fileID: 8168208146437765090}
+  flashedMaterial: {fileID: 2100000, guid: 08f15dc769136c14b99d197695dbe5b7, type: 2}
+  flashDuration: 0.1
 --- !u!1 &5861125932353511786
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,5 +544,10 @@ GameObject:
 --- !u!4 &8168208146437765021 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2309687946990218560, guid: c0835477a00f6244d9b0322d210e2173, type: 3}
+  m_PrefabInstance: {fileID: 5861125932617931485}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &8168208146437765090 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2309687946990218559, guid: c0835477a00f6244d9b0322d210e2173, type: 3}
   m_PrefabInstance: {fileID: 5861125932617931485}
   m_PrefabAsset: {fileID: 0}

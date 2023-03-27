@@ -6,6 +6,7 @@ public class PlayerEventsSO : ScriptableObject
 {
     public event UnityAction<string> HealthChangedEvent;
     public event UnityAction<string> AmmoChangedEvent;
+    public event UnityAction<GameObject> WeaponChangedEvent;
     public event UnityAction TimeSnapEvent;
     //public event UnityAction ShootingEvent;
     // public event UnityAction<int, float> ScopeChangedEvent;
@@ -22,6 +23,10 @@ public class PlayerEventsSO : ScriptableObject
     public void RaiseTimeSnapEvent()
     {
         TimeSnapEvent?.Invoke();
+    }
+    public void RaiseWeaponChangedEvent(GameObject weaponObj)
+    {
+        WeaponChangedEvent?.Invoke(weaponObj);
     }
     // public void RaiseShootingEvent()
     // {

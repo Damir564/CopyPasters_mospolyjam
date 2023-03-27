@@ -13,6 +13,7 @@ public class TimeSnapEffector : MonoBehaviour
     private void Start()
     {
         sprite = transform.GetComponent<SpriteRenderer>();
+        sprite.enabled = true;
         slowColor = sprite.color;
         normalColor = new Color(0.2f, 0.2f, 1f, 0f);
         sprite.color = normalColor;

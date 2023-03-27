@@ -6542,23 +6542,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1410795809 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3849962381985250694, guid: dce2cda00e7075c4e9f9d6ba13e9e5c3, type: 3}
-  m_PrefabInstance: {fileID: 1642543705}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1410795812
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1410795809}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97f82fa672d097f4c843e4666a145f38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1431510725
 GameObject:
   m_ObjectHideFlags: 0
@@ -7382,37 +7365,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 524404119, guid: dce2cda00e7075c4e9f9d6ba13e9e5c3, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1202625752, guid: dce2cda00e7075c4e9f9d6ba13e9e5c3, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1843843387, guid: dce2cda00e7075c4e9f9d6ba13e9e5c3, type: 3}
-      propertyPath: m_Color.a
-      value: 0.02745098
-      objectReference: {fileID: 0}
-    - target: {fileID: 1843843387, guid: dce2cda00e7075c4e9f9d6ba13e9e5c3, type: 3}
-      propertyPath: m_Color.b
-      value: 0.18431373
-      objectReference: {fileID: 0}
-    - target: {fileID: 1843843387, guid: dce2cda00e7075c4e9f9d6ba13e9e5c3, type: 3}
-      propertyPath: m_Color.g
-      value: 0.7137255
-      objectReference: {fileID: 0}
-    - target: {fileID: 1843843387, guid: dce2cda00e7075c4e9f9d6ba13e9e5c3, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1843843387, guid: dce2cda00e7075c4e9f9d6ba13e9e5c3, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3746627245142007445, guid: dce2cda00e7075c4e9f9d6ba13e9e5c3, type: 3}
-      propertyPath: m_Color.a
-      value: 0.19607843
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6914951248277067399, guid: dce2cda00e7075c4e9f9d6ba13e9e5c3, type: 3}
       propertyPath: m_Name

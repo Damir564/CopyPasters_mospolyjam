@@ -47,10 +47,11 @@ public class Shooting : MonoBehaviour
         }
     }
 
-    private void OnWeaponChanged()
+    private void OnWeaponChanged(GameObject weaponObj)
     {
         // GameManager.Instance.PlayerEvents.RaiseWeaponImageAndCameraFollowChangeEvent(m_weaponValues.WeaponImage, m_head.transform.GetChild(1));
         // OnScopeChanged();
+        GameManager.Instance.PlayerEvents.RaiseWeaponChangedEvent(weaponObj);
         OnAmmoAmountChanged();
     }
 
@@ -111,7 +112,7 @@ public class Shooting : MonoBehaviour
         // m_audioSource = m_head.GetComponent<AudioSource>();
         m_currentAllAmmo = m_weaponValues.WeaponAllTotalAmmo;
         m_currentAmmo = m_weaponValues.WeaponTotalAmmo;
-        OnWeaponChanged();
+        OnWeaponChanged(m_head);
     }
 
     IEnumerator Reloading()
