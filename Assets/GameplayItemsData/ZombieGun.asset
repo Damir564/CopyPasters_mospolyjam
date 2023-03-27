@@ -15,13 +15,13 @@ MonoBehaviour:
   m_bulletPrefab: {fileID: 6227689188737109879, guid: 159362d6e72a5d14f85358ebbbf7d3ce, type: 3}
   m_headPrefab: {fileID: 2309687946990218561, guid: aa5ddded742bb674aa377568e35b3493, type: 3}
   m_bulletForce: 0
-  m_bulletDestroyTime: 0.01
-  m_weaponSoundShoot: {fileID: 8300000, guid: 01ea7b85b9fa010429cf0987974b5c5f, type: 3}
+  m_bulletDestroyTime: 0.02
+  m_weaponSoundShoot: {fileID: 8300000, guid: bc79a8055b42343409ce53e463ee8b39, type: 3}
   m_weaponSoundReload: {fileID: 8300000, guid: f3cc2c8fc0e87e74c841bdf5fd8c5be1, type: 3}
-  m_weaponFireRate: 0.2
+  m_weaponFireRate: 0.3
   m_weaponReloadTime: 2.4
   m_weaponAllTotalAmmo: 99999
-  m_weaponTotalAmmo: 12
+  m_weaponTotalAmmo: 99999
   m_weaponScope: 
   m_weaponScopeMultiplier: []
   m_weaponImage: {r: 0, g: 0, b: 0, a: 0}

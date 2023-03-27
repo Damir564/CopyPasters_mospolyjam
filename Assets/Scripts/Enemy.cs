@@ -25,7 +25,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Transform posToGo;
     [SerializeField] private bool isFiringWhileMove = false;
 
-    private EnemyShooting enemyShooting;
+    private ZombieShooting enemyShooting;
     private bool isFacingRight = true;
     private float distance = 0f;
     private float angle = 0f;
@@ -35,7 +35,7 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         armsHolder.gameObject.SetActive(false);
-        enemyShooting = transform.GetComponent<EnemyShooting>();
+        enemyShooting = transform.GetComponent<ZombieShooting>();
 
         List<GameObject> triggers = GameManager.Instance.Triggers;
         foreach (GameObject el in triggers)
