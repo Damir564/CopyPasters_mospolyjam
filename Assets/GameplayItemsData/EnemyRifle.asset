@@ -20,7 +20,7 @@ MonoBehaviour:
   m_weaponFireRate: 0.3
   m_weaponReloadTime: 2
   m_weaponAllTotalAmmo: 99999
-  m_weaponTotalAmmo: 30
+  m_weaponTotalAmmo: 15
   m_weaponScope: 
   m_weaponScopeMultiplier: []
   m_weaponImage: {r: 0, g: 0, b: 0, a: 0}

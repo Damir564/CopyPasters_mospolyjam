@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class DontDestroy : MonoBehaviour
 {
+    [SerializeField] private string whereToBeDestroyed;
     [SerializeField] private float timeToBeAlive = 2f;
     void Awake()
     {
@@ -19,7 +20,7 @@ public class DontDestroy : MonoBehaviour
     {
         string currentName = next.name;
 
-        if (currentName == "Level_City")
+        if (currentName == whereToBeDestroyed)
         {
             Destroy(this.gameObject, timeToBeAlive);
         } 

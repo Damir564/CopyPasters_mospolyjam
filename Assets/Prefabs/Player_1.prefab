@@ -414,7 +414,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponHolder: {fileID: 7575052050452384781}
-  m_allBulletsParent: {fileID: 0}
 --- !u!114 &1588388869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -433,6 +432,7 @@ MonoBehaviour:
   - {fileID: 4645040272199581621}
   - {fileID: 7575052050360220535}
   flashedMaterial: {fileID: 2100000, guid: 08f15dc769136c14b99d197695dbe5b7, type: 2}
+  healedMaterial: {fileID: 2100000, guid: 5cc55a1fc43650147b91586f8f260922, type: 2}
   flashDuration: 0.1
 --- !u!1 &7575052050856865272
 GameObject:

@@ -17,7 +17,7 @@ MonoBehaviour:
   m_bulletForce: 20
   m_bulletDestroyTime: 7
   m_weaponSoundShoot: {fileID: 0}
-  m_weaponFireRate: 0.25
+  m_weaponFireRate: 0.2
   m_weaponReloadTime: 2
   m_weaponAllTotalAmmo: 200
   m_weaponTotalAmmo: 20

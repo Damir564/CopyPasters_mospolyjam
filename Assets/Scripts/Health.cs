@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class Health : MonoBehaviour
     private SpriteRenderer weaponToFlash;
     private Material originalMaterial;
     [SerializeField] private Material flashedMaterial;
+    [SerializeField] private Material healedMaterial;
     [SerializeField] private float flashDuration = 0.1f;
 
     private int m_currentHealth;
@@ -44,19 +46,29 @@ public class Health : MonoBehaviour
 
     private void OnGameOver()
     {
+        GameManager.Instance.PlayerEvents.RaiseChangeSceneEvent(-2);
+        if (!GameManager.Instance.SlowMotion.IsNormalTime)
+            GameManager.Instance.PlayerEvents.RaiseTimeSnapEvent();
         Debug.Log("Game over");
     }
 
     private void OnHealthChanged(int value)
     {
-        m_currentHealth -= value;
+        m_currentHealth += value;
         // GameManager.Instance.PlayerEvents.RaiseWeaponImageAndCameraFollowChangeEvent(m_weaponValues.WeaponImage, m_head.transform.GetChild(1));
         // OnScopeChanged();
-        if (value > 0)
+        if (value < 0)
         {
             Invoke("FlashMaterial", 0f);
             Invoke("OriginalMaterial", flashDuration);
         }
+        if (value > 0)
+        {
+            Invoke("HealMaterial", 0f);
+            Invoke("OriginalMaterial", flashDuration);
+        }
+        if (m_currentHealth > maxHealth)
+            m_currentHealth = maxHealth;
         string temp = "Health: " + m_currentHealth.ToString() + "/" + maxHealth.ToString(); 
         GameManager.Instance.PlayerEvents.RaiseHealthChangedEvent(temp);
     }
@@ -75,6 +87,14 @@ public class Health : MonoBehaviour
         }
         weaponToFlash.material = flashedMaterial;
     }
+        private void HealMaterial()
+    {
+        foreach (SpriteRenderer elem in flashedSprites)
+        {
+            elem.material = healedMaterial;
+        }
+        weaponToFlash.material = healedMaterial;
+    }
 
     private void OriginalMaterial()
     {
@@ -90,8 +110,17 @@ public class Health : MonoBehaviour
         if (collision.gameObject.tag.Equals("EnemyBullet"))
         {
             // Debug.Log(m_currentHealth);
-            HealthChange(1);
+            HealthChange(-1);
             Destroy(collision.gameObject);
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.tag.Equals("Heal"))
+        {
+            Debug.Log(collider.name);
+            HealthChange(2);
+            Destroy(collider.gameObject);
         }
     }
 }

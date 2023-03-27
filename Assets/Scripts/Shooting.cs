@@ -9,7 +9,8 @@ public class Shooting : MonoBehaviour
     // [SerializeField] 
     private GameObject m_head;
 
-    [SerializeField] private Transform m_allBulletsParent;
+    //[SerializeField] 
+    private Transform m_allBulletsParent;
     private Transform m_bulletExit;
     private AudioSource m_audioSource;
     //[SerializeField] 
@@ -23,6 +24,7 @@ public class Shooting : MonoBehaviour
 
     private void Start()
     {
+        m_allBulletsParent = GameManager.Instance.AllBulltesParent;
         this.WeaponChange(1);
     }
     

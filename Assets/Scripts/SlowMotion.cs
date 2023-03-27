@@ -14,6 +14,11 @@ public class SlowMotion : MonoBehaviour
     private float m_normalTime = 1;
     private bool isNormalTime = true;
 
+    public bool IsNormalTime
+    {
+        get => isNormalTime;
+    }
+
     private void Start()
     {
         GameManager.Instance.PlayerEvents.TimeSnapEvent += TimeSnap;

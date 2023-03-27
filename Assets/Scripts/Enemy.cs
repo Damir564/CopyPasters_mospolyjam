@@ -152,10 +152,9 @@ public class Enemy : MonoBehaviour
         }
         else if (currentState == States.Run)
         {
+            armsHolder.eulerAngles = new Vector3(0, 0, angle);
             if (isFiringWhileMove)
             {
-                armsHolder.eulerAngles = new Vector3(0, 0, angle);
-                enemyShooting.Shoot();
                 if (distance > distanceFrom)
                 {
                     transform.position = Vector2.MoveTowards(transform.position, posToGo.position, speed * Time.deltaTime);
@@ -165,6 +164,7 @@ public class Enemy : MonoBehaviour
                 {
                     animator.SetBool("isRun", false);
                 }
+                enemyShooting.Shoot();
             }
             else 
             {

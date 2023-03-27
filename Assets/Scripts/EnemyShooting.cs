@@ -23,7 +23,7 @@ public class EnemyShooting : MonoBehaviour
 
     private void Start()
     {
-        m_allBulletsParent = GameManager.Instance.transform;
+        m_allBulletsParent = GameManager.Instance.AllBulltesParent;
         this.WeaponChange(2);
     }
     
