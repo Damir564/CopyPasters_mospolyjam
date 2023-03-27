@@ -10,6 +10,7 @@ public class Dialogue : MonoBehaviour
     private int index;
 
     [SerializeField] private bool canBeDisabled = false;
+    public GameObject actionDialogue;
 
     // Start is called before the first frame update
     void Start()
@@ -61,7 +62,8 @@ public class Dialogue : MonoBehaviour
         }
         else if (canBeDisabled)
         {
-            GameManager.Instance.Player.GetComponent<Player>().ActivateActionDialogue();
+            // GameManager.Instance.Player.GetComponent<Player>().ActivateActionDialogue();
+            actionDialogue.SetActive(true);
             gameObject.SetActive(false);
         }
     }

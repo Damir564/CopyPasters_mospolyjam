@@ -12,6 +12,7 @@ public class ActionDialogue : MonoBehaviour
     private int state = 0;
 
     [SerializeField] private bool canBeDisabled = false;
+    public Player player;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +29,7 @@ public class ActionDialogue : MonoBehaviour
             
             if (textComponent.text == lines[index])
             {
-                GameManager.Instance.Player.GetComponent<Player>().GrabWeapon();
+                player.GrabWeapon();
                 NextLine();
                 state++;
             }
@@ -45,7 +46,7 @@ public class ActionDialogue : MonoBehaviour
         {
             if (textComponent.text == lines[index])
             {
-                GameManager.Instance.Player.GetComponent<Player>().UseTimeSnap();
+                player.UseTimeSnap();
                 NextLine();
                 state++;
             }

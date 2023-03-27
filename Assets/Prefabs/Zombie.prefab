@@ -221,8 +221,8 @@ GameObject:
   - component: {fileID: 7593953923052456676}
   - component: {fileID: 815346164}
   - component: {fileID: 815346166}
-  - component: {fileID: 815346167}
   - component: {fileID: 815346168}
+  - component: {fileID: 8546949210981654098}
   m_Layer: 8
   m_Name: Zombie
   m_TagString: Enemy
@@ -473,28 +473,6 @@ MonoBehaviour:
   flashedMaterial: {fileID: 2100000, guid: 08f15dc769136c14b99d197695dbe5b7, type: 2}
   flashDuration: 0.1
   entiryAudioSource: {fileID: 7593953923052456676}
---- !u!114 &815346167
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7593953923052456696}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc2a398d8b3f8c6468ee74af073d5fed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 7593953923052456677}
-  groupNumber: 0
-  distanceFrom: 1
-  speed: 10
-  armsHolder: {fileID: 833621061}
-  idleArms: {fileID: 829726153}
-  weaponHolder: {fileID: 1193193538}
-  body: {fileID: 7593953923052456698}
-  posToGo: {fileID: 0}
-  isFiringWhileMove: 1
 --- !u!114 &815346168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -510,6 +488,28 @@ MonoBehaviour:
   weaponHolder: {fileID: 1193193538}
   m_head: {fileID: 5291320719468140203}
   defaultMinPtch: 0.9
+--- !u!114 &8546949210981654098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7593953923052456696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 096b7187889dfda478f3b89edd795cc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 7593953923052456677}
+  groupNumber: 0
+  distanceFrom: 1
+  speed: 8
+  armsHolder: {fileID: 833621061}
+  idleArms: {fileID: 829726153}
+  weaponHolder: {fileID: 1193193538}
+  body: {fileID: 7593953923052456698}
+  posToGo: {fileID: 0}
+  isFiringWhileMove: 1
 --- !u!1001 &7593953922692840426
 PrefabInstance:
   m_ObjectHideFlags: 0
