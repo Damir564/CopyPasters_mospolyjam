@@ -17,10 +17,10 @@ MonoBehaviour:
   m_bulletForce: 20
   m_bulletDestroyTime: 7
   m_weaponSoundShoot: {fileID: 0}
-  m_weaponFireRate: 0.08
+  m_weaponFireRate: 0.25
   m_weaponReloadTime: 2
   m_weaponAllTotalAmmo: 200
-  m_weaponTotalAmmo: 30
+  m_weaponTotalAmmo: 20
   m_weaponScope: 
   m_weaponScopeMultiplier: []
   m_weaponImage: {r: 0, g: 0, b: 0, a: 0}

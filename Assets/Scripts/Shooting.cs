@@ -29,6 +29,8 @@ public class Shooting : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.Instance.GameState == GameManager.GameStates.Cutscene)
+            return;
         if (Input.GetButton("Fire1"))
             Shoot();
         if (Input.GetButtonDown("Reload"))

@@ -4,6 +4,21 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public enum GameStates {
+        Cutscene,
+        Playable
+    }
+
+    private GameStates gameState = GameStates.Cutscene;
+    public GameStates GameState
+    {
+        get => gameState;
+        set 
+        {
+            gameState = value;
+        }
+    }
+
     public enum Weapons
     {
         Simple,

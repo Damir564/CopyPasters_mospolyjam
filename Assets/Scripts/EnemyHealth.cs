@@ -27,7 +27,7 @@ public class EnemyHealth : MonoBehaviour
         OnHealthChanged(value);
         if (m_currentHealth <= 0)
         {
-            Destroy(transform.gameObject, 0.01f);
+            Destroy(transform.gameObject, flashDuration);
         }
     }
 
