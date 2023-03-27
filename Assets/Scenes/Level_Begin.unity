@@ -1296,6 +1296,7 @@ MonoBehaviour:
   - {fileID: 647915056}
   flashedMaterial: {fileID: 2100000, guid: 08f15dc769136c14b99d197695dbe5b7, type: 2}
   flashDuration: 0.1
+  entiryAudioSource: {fileID: 0}
 --- !u!114 &808915095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1310,6 +1311,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponHolder: {fileID: 5839638}
   m_head: {fileID: 647915057}
+  defaultMinPtch: 0.9
 --- !u!114 &808915096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1407,7 +1409,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 33296756618688876, guid: e18adf490dcce5b469709687e0c6f240, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.2918186
+      value: 5.286519
       objectReference: {fileID: 0}
     - target: {fileID: 33296756618688876, guid: e18adf490dcce5b469709687e0c6f240, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1804,7 +1806,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6914951248277067419, guid: dce2cda00e7075c4e9f9d6ba13e9e5c3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.2918186
+      value: 5.286519
       objectReference: {fileID: 0}
     - target: {fileID: 6914951248277067419, guid: dce2cda00e7075c4e9f9d6ba13e9e5c3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2051,7 +2053,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1b2a54f504408df4d836d6719951ecae, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -2115,7 +2117,7 @@ MonoBehaviour:
   m_margin: {x: 109.54639, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1533316055
@@ -2268,6 +2270,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponHolder: {fileID: 5861125932398059402}
   m_head: {fileID: 501259843}
+  defaultMinPtch: 0.9
 --- !u!114 &1711676360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2847,8 +2850,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1b2a54f504408df4d836d6719951ecae, type: 2}
+  m_sharedMaterial: {fileID: 4166443814853285861, guid: 1b2a54f504408df4d836d6719951ecae, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3732,6 +3735,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponHolder: {fileID: 7575052051874723218}
+  defaultMinPtch: 0.9
 --- !u!4 &7575052051430843274
 Transform:
   m_ObjectHideFlags: 0
@@ -3959,3 +3963,4 @@ MonoBehaviour:
   - {fileID: 501259844}
   flashedMaterial: {fileID: 2100000, guid: 08f15dc769136c14b99d197695dbe5b7, type: 2}
   flashDuration: 0.1
+  entiryAudioSource: {fileID: 0}

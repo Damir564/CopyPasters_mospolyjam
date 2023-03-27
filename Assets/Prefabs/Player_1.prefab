@@ -426,7 +426,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a41c6d93f4e19d84bafa933a1a3d807a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 3
+  maxHealth: 5
   flashedSprites:
   - {fileID: 7575052050584996127}
   - {fileID: 4645040272199581621}

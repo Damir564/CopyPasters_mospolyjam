@@ -12,6 +12,8 @@ public class EnemyHealth : MonoBehaviour
     private int m_currentHealth;
     [SerializeField] private float flashDuration = 0.1f;
 
+    [SerializeField] private AudioSource entiryAudioSource;
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -33,14 +35,17 @@ public class EnemyHealth : MonoBehaviour
 
     private void OnHealthChanged(int value)
     {
-        m_currentHealth -= value;
-        // GameManager.Instance.PlayerEvents.RaiseWeaponImageAndCameraFollowChangeEvent(m_weaponValues.WeaponImage, m_head.transform.GetChild(1));
-        // OnScopeChanged();
-        if (value > 0)
+        m_currentHealth += value;
+        if (value < 0)
         {
+            entiryAudioSource.pitch = Random.Range(1.5f, 1.7f);
+            entiryAudioSource.volume = Random.Range(0.5f, 0.6f);
+            entiryAudioSource.Play();
             Invoke("FlashMaterial", 0f);
             Invoke("OriginalMaterial", flashDuration);
         }
+        // GameManager.Instance.PlayerEvents.RaiseWeaponImageAndCameraFollowChangeEvent(m_weaponValues.WeaponImage, m_head.transform.GetChild(1));
+        // OnScopeChanged();
         // GameManager.Instance.PlayerEvents.RaiseWeaponImageAndCameraFollowChangeEvent(m_weaponValues.WeaponImage, m_head.transform.GetChild(1));
         // OnScopeChanged();
         // string temp = "Health: " + value.ToString() + "/" + maxHealth.ToString(); 
@@ -65,10 +70,12 @@ public class EnemyHealth : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (gameObject == null)
+            return;
         if (collision.gameObject.tag.Equals("Bullet"))
         {
             // Debug.Log("Enemy health: " + m_currentHealth);
-            HealthChange(1);
+            HealthChange(-1);
             Destroy(collision.gameObject);
         }
     }

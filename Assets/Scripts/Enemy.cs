@@ -45,6 +45,16 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    private void OnDisable()
+    {
+        List<GameObject> triggers = GameManager.Instance.Triggers;
+        foreach (GameObject el in triggers)
+        {
+            el.GetComponent<TriggerPlayer>().OnPlayerEnterTrigger -= PlayerTrigger_OnPlayerEnterTrigger;
+            // Debug.Log("Subscribed");
+        }
+    }
+
     // private void OnDisable()
     // {
     //     List<GameObject> triggers = GameManager.Instance.Triggers;
@@ -56,6 +66,8 @@ public class Enemy : MonoBehaviour
 
     private void PlayerTrigger_OnPlayerEnterTrigger(int number)
     {
+        if (gameObject == null)
+            return;
         if (groupNumber == number && currentState == States.Idle)
         {
             if (posToGo == null)
@@ -72,6 +84,8 @@ public class Enemy : MonoBehaviour
 
     private void StartRun()
     {
+        if (gameObject == null)
+            return;
         if (isFiringWhileMove)
         {
             armsHolder.gameObject.SetActive(true);
@@ -83,6 +97,8 @@ public class Enemy : MonoBehaviour
 
     private void StartBattle()
     {
+        if (gameObject == null)
+            return;
         armsHolder.gameObject.SetActive(true);
         idleArms.gameObject.SetActive(false);
         body.transform.rotation = new Quaternion();

@@ -22,4 +22,18 @@ public class DetectCollision : MonoBehaviour
             Destroy(collision.gameObject);
         }
     }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag.Equals("Bullet") || collision.gameObject.tag.Equals("EnemyBullet"))
+        {
+            Destroy(collision.gameObject);
+        }
+    }
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag.Equals("Bullet") || collision.gameObject.tag.Equals("EnemyBullet"))
+        {
+            Destroy(collision.gameObject);
+        }
+    }
 }

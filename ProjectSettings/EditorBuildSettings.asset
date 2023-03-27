@@ -24,6 +24,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Level_City.unity
     guid: 7c8c3756c864249429685bb9c0d29d89
   - enabled: 1
+    path: Assets/Scenes/Level_Forest.unity
+    guid: b3885088f8697ed48b9ac694be5bce6f
+  - enabled: 1
+    path: Assets/Scenes/oldmanCutScene.unity
+    guid: 64cc82681c0ea62419c2dafa2cc6ca9b
+  - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: cb3d321ae80cbc743b6282d2210f6e1c
   m_configObjects: {}

@@ -119,7 +119,7 @@ public class Health : MonoBehaviour
         if (collider.tag.Equals("Heal"))
         {
             Debug.Log(collider.name);
-            HealthChange(2);
+            HealthChange(maxHealth - 1);
             Destroy(collider.gameObject);
         }
     }

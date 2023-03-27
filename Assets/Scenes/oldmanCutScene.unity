@@ -665,6 +665,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: SubtitleBox1
       objectReference: {fileID: 0}
+    - target: {fileID: 5071312080050446739, guid: 9a4d164fb9214d34694d73ec26ccc133, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 1b2a54f504408df4d836d6719951ecae, type: 2}
+    - target: {fileID: 5071312080050446739, guid: 9a4d164fb9214d34694d73ec26ccc133, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 4166443814853285861, guid: 1b2a54f504408df4d836d6719951ecae, type: 2}
+    - target: {fileID: 5071312080424826154, guid: 9a4d164fb9214d34694d73ec26ccc133, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5071312080424826155, guid: 9a4d164fb9214d34694d73ec26ccc133, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5071312080424826155, guid: 9a4d164fb9214d34694d73ec26ccc133, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a4d164fb9214d34694d73ec26ccc133, type: 3}
 --- !u!224 &1580592740 stripped

@@ -16,10 +16,11 @@ MonoBehaviour:
   m_headPrefab: {fileID: 2309687946990218561, guid: c0835477a00f6244d9b0322d210e2173, type: 3}
   m_bulletForce: 20
   m_bulletDestroyTime: 7
-  m_weaponSoundShoot: {fileID: 0}
+  m_weaponSoundShoot: {fileID: 8300000, guid: 01ea7b85b9fa010429cf0987974b5c5f, type: 3}
+  m_weaponSoundReload: {fileID: 8300000, guid: f3cc2c8fc0e87e74c841bdf5fd8c5be1, type: 3}
   m_weaponFireRate: 0.2
-  m_weaponReloadTime: 2
-  m_weaponAllTotalAmmo: 200
+  m_weaponReloadTime: 2.4
+  m_weaponAllTotalAmmo: 10000
   m_weaponTotalAmmo: 20
   m_weaponScope: 
   m_weaponScopeMultiplier: []

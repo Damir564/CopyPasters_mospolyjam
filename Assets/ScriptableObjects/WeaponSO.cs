@@ -10,6 +10,7 @@ public class WeaponSO : ScriptableObject
     [SerializeField] private float m_bulletForce;
     [SerializeField] private float m_bulletDestroyTime;
     [SerializeField] private AudioClip m_weaponSoundShoot;
+    [SerializeField] private AudioClip m_weaponSoundReload;
     [SerializeField] private float m_weaponFireRate;
     [SerializeField] private float m_weaponReloadTime;
     [SerializeField] private int m_weaponAllTotalAmmo;
@@ -38,6 +39,11 @@ public class WeaponSO : ScriptableObject
     public AudioClip WeaponSoundShoot
     {
         get => m_weaponSoundShoot;
+    }
+
+    public AudioClip WeaponSoundReload
+    {
+        get => m_weaponSoundReload;
     }
     public float WeaponFireRate
     {

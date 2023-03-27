@@ -21,13 +21,33 @@ public class Shooting : MonoBehaviour
     private int m_currentAllAmmo;
     private int m_currentAmmo;
     private float m_nextFireTime = 0f;
+    private bool isNormalTime = true;
+    [SerializeField] private float defaultMinPtch = 0.9f;
+    private float timePitchDelta = 0f;
 
     private void Start()
     {
+        GameManager.Instance.PlayerEvents.TimeSnapEvent += PitchChange;
         m_allBulletsParent = GameManager.Instance.AllBulltesParent;
         this.WeaponChange(1);
     }
+
+    private void OnDisable()
+    {
+        GameManager.Instance.PlayerEvents.TimeSnapEvent -= PitchChange;
+    }
     
+
+    private void PitchChange()
+    {
+        isNormalTime = !isNormalTime;
+        if (!isNormalTime)
+        {
+            timePitchDelta = 0.5f;
+        }
+        else
+            timePitchDelta = 0f;
+    }
 
     private void Update()
     {
@@ -46,6 +66,9 @@ public class Shooting : MonoBehaviour
     {
         if (m_isNotReloading && m_currentAmmo != m_weaponValues.WeaponTotalAmmo && m_currentAllAmmo != 0)
         {
+            m_audioSource.pitch = Random.Range(defaultMinPtch - timePitchDelta, 1.1f - timePitchDelta);
+            m_audioSource.volume = Random.Range(0.9f, 1f);
+            m_audioSource.PlayOneShot(m_weaponValues.WeaponSoundReload);
             StartCoroutine(Reloading());
             m_isNotReloading = false;
         }
@@ -95,7 +118,9 @@ public class Shooting : MonoBehaviour
         Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
         bulletRb.AddForce(m_bulletExit.right * m_weaponValues.BulletForce, ForceMode2D.Impulse);
         //Раскомментить для звука
-        //m_audioSource.PlayOneShot(m_weaponValues.WeaponSoundShoot);
+        m_audioSource.pitch = Random.Range(defaultMinPtch - timePitchDelta, 1.1f - timePitchDelta);
+        m_audioSource.volume = Random.Range(0.9f, 1f);
+        m_audioSource.PlayOneShot(m_weaponValues.WeaponSoundShoot);
         // Эффект ещё должен быть
         Destroy(bullet, m_weaponValues.BulletDestroyTime);
         m_currentAmmo -= 1;
@@ -113,7 +138,7 @@ public class Shooting : MonoBehaviour
         m_weaponValues = GameManager.Instance.WeaponSOs[weaponid];
         m_head = Instantiate(m_weaponValues.HeadPrefab, weaponHolder);
         m_bulletExit = m_head.transform.GetChild(0);
-        // m_audioSource = m_head.GetComponent<AudioSource>();
+        m_audioSource = m_head.GetComponent<AudioSource>();
         m_currentAllAmmo = m_weaponValues.WeaponAllTotalAmmo;
         m_currentAmmo = m_weaponValues.WeaponTotalAmmo;
         OnWeaponChanged(m_head);
